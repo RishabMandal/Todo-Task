@@ -93,10 +93,10 @@ const AddTodo = () => {
               trackColor={{ false: "#767577", true: "white" }}
               thumbColor={starred ? "red" : "#f4f3f4"}
               onValueChange={() => {
-                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
                 setStarred((previousState) => !previousState);
                 setTimeout(() => {
-                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
                 }, 200);
               }}
               value={starred}

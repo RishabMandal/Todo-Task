@@ -15,6 +15,7 @@ const Account = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     router.push({ pathname: `/${todo.id}` });
   };
+  const d = new Date();
   return (
     <View
       className="bg-black min-h-[120vh] p-4 pt-10 flex-1"
@@ -30,8 +31,16 @@ const Account = () => {
             router.push("/");
           }}
         />
-        <Text className="text-white text-xl">Profile</Text>
+        <Text className="text-white text-2xl font-semibold">Profile</Text>
         <Ionicons name="mic-circle-outline" size={36} color="white" />
+      </View>
+      <View>
+        <Text className="text-center text-white font-bold text-xl mt-2">
+          Crafted & created by Rishab Mandal
+        </Text>
+        <Text className="text-center text-white font-semibold text-xl">
+          © 2025-{d.getFullYear()}
+        </Text>
       </View>
     </View>
   );

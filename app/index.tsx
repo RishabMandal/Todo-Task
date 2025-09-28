@@ -15,16 +15,10 @@ export default function Index() {
 
   return (
     <View
-      // style={{
-      //   flex: 1,
-      //   justifyContent: "center",
-      //   alignItems: "center",
-      // }}
-      className="bg-black text-white min-h-screen pt-10"
+      className="bg-black text-white min-h-screen"
     >
       <StatusBar style="dark" hidden />
       <Todolist todos={todos} setTodos={setTodos} />
-      {/* <addTodo todos={todos} setTodos={setTodos} /> */}
     </View>
   );
 }

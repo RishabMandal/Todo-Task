@@ -59,6 +59,9 @@ const Todo = ({ todos, setTodos, todo }) => {
               onPress={() => {
                 setCompleted(true);
                 Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+                setTimeout(() => {
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                }, 200);
               }}
             />
           ) : (
@@ -69,6 +72,9 @@ const Todo = ({ todos, setTodos, todo }) => {
               onPress={() => {
                 setCompleted(false);
                 Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+                setTimeout(() => {
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                }, 200);
               }}
             />
           )}
@@ -80,6 +86,9 @@ const Todo = ({ todos, setTodos, todo }) => {
             onPress={() => {
               handleDelete(todo?.id);
               Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+              setTimeout(() => {
+                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+              }, 200);
             }}
           />
           {/* <Text

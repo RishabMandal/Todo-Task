@@ -47,32 +47,35 @@ const CalendarTab = () => {
           }}
         />
         <Text className="text-white text-xl">Calendar</Text>
-        <Ionicons name="mic-circle-outline" size={36} color="white" />
+        <Ionicons
+          name="mic-circle-outline"
+          size={36}
+          color="white"
+          onPress={() => {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+            alert("Feature not  built yet, work in progress");
+          }}
+        />
       </View>
       <View>
         <Calendar
-          style={
-            {
-              // borderWidth: 5,
-              // borderColor: "gray",
-              // borderRadius: 20,
-              // height: 350,
-              // backgroundColor: "black"
-            }
-          }
           theme={{
-            backgroundColor: "#171717",
-            calendarBackground: "#171717",
+            backgroundColor: "transparent",
+            calendarBackground: "transparent",
+            dayTextColor: "#ffffff",
+            monthTextColor: "#ffffff",
+            textDisabledColor: "#555",
+            arrowColor: "#ffffff",
             textSectionTitleColor: "red",
             selectedDayBackgroundColor: "green",
             selectedDayTextColor: "#ffffff",
             selectedDotColor: "red",
             todayTextColor: "red",
-            dayTextColor: "white",
-            textDisabledColor: "gray",
-            monthTextColor: "white",
-            arrowColor: "red",
-            todayBackgroundColor: "white",
+          }}
+          style={{
+            marginBottom: 12,
+            borderRadius: 12,
+            backgroundColor: "rgba(255,255,255,0.05)",
           }}
           onDayPress={(day) => {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -88,22 +91,7 @@ const CalendarTab = () => {
         data={todos}
         renderItem={({ item }) => (
           <View>
-            {selectedDate !== undefined ? (
-              item?.date.toLowerCase().includes(selectedDate) && (
-                <TouchableOpacity
-                  onPress={() => {
-                    goToDetailedView(item);
-                  }}
-                >
-                  <Todo
-                    todos={todos}
-                    setTodos={setTodos}
-                    todo={item}
-                    onPress={() => goToDetailedView(item)}
-                  />
-                </TouchableOpacity>
-              )
-            ) : (
+            {selectedDate !== undefined && item?.date === selectedDate && (
               <TouchableOpacity
                 onPress={() => {
                   goToDetailedView(item);
